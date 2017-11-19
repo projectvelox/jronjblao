@@ -1,0 +1,9 @@
+.wf-window-close-icon {position: relative !important;cursor: pointer !important;font-size: 15px;color: #333;top: 0px;float: right;margin-right: 3px;}
+.wf-window-close-icon:active {top: 1px !important;}
+.wf-window-close-icon:hover {color: red !important;}
+.wf-window-heading {padding: 10px !important;font-weight: normal !important;color: #000000 !important;cursor: move;font-size: 13px;background: #cccccc !important;font-family: tahoma;}
+.wf-noselect { -webkit-touch-callout: none !important; -webkit-user-select: none !important; -khtml-user-select: none !important; -moz-user-select: none !important; -ms-user-select: none !important; user-select: none !important; cursor: default !important; }
+.wf-flatify {border-radius: 0px !important;}
+.wf-window {font-family: 'Roboto Condensed', sans-serif !important;-ms-text-size-adjust: 100% !important;-webkit-text-size-adjust: 100% !important;font-size: 17px !important;display: inline-block;/* border: 1px solid #2f2e2e !important; */margin-bottom: 0px !important;position: fixed;margin-top: 15px;margin-left: 15px;display: none;background: #ccc;z-index: 99999 !important;-webkit-box-shadow: 2px 2px 2px 0px #333 !important;-moz-box-shadow: 2px 2px 2px 0px #333 !important;box-shadow: 2px 2px 2px 0px #333 !important;}
+.wf-modal { display: none; position: fixed; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgb(0,0,0); background-color: rgba(0,0,0,0.6); -webkit-touch-callout: none !important; -webkit-user-select: none !important; -khtml-user-select: none !important; -moz-user-select: none !important; -ms-user-select: none !important; user-select: none !important; }
+.wf-window-viewport {width: calc(100% - 1px) !important;overflow: hidden;height: calc(100% - 39px) !important;margin-left: 1px;background: #ccc;line-height: 1.1;}

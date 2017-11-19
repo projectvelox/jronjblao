@@ -1,0 +1,101 @@
+#template_options{
+	display:block;
+	position:fixed;
+	bottom:0;
+	right:0;
+	left:0;
+	z-index: 9999;
+	color:white;
+    padding-bottom: 5px;
+    padding-top: 10px;
+
+}
+
+#template_options a{
+color: #0764CB;}
+#template_options a:hover{
+color: #3294FF;}
+
+
+#template_options h3{
+	display:inline;
+	margin-right: 10px;
+	margin-bottom:0;
+	line-height:0px;
+    float:left;
+    margin-top:10px;
+}
+
+
+#template_options h4{
+	display:inline;
+	margin-right: 10px;
+	float:left;
+}
+
+
+#template_options div{
+   padding: 0px;
+}
+#template_options #bar_right {
+	background-color:#FFFFFF;
+	float:right;
+	display: inline;
+	padding-top:5px;
+ 	padding-bottom:3px;
+    padding-right:3px;
+    padding-left:5px;
+	margin-right:10px;
+    margin-bottom: 10px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    opacity: 10%;
+	background-color:rgba(0,0,0,0.7);
+	*background-color:black;
+	z-index: 9999;
+}
+#template_options #bar_left {
+	background-color:#FFFFFF;
+	float:left;
+	display: inline;
+	padding-top:3px;
+ 	padding-bottom:2px;
+    padding-right:3px;
+    padding-left:3px;
+	margin-left:10px;
+    margin-bottom: 10px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    opacity: 10%;
+	background-color:rgba(0,0,0,0.7);
+	*background-color:black;
+	z-index: 9999;
+    opacity:0.7;
+filter:alpha(opacity=80); /* For IE8 and earlier */
+}
+
+#template_options div label{margin-right:5px; font-weight:bold; font-size:12px;}
+#template_options div a{font-size:12px !important;}
+
+.theme_colour a{	
+	border:1px solid #ccc;
+	display: inline-block;
+	width:10px;
+	height:10px;
+	margin-right: 3px;
+	}
+	
+.theme_colour a span{display:none !important;}
+	
+.theme_colour a.black{background-color:black;}
+.theme_colour a.blue{background-color:#1C5EA0;}
+.theme_colour a.navy{background-color:#2b4356;}
+.theme_colour a.red{background-color:#7C1F30;}
+.theme_colour a.green{background-color:#3d8336;}
+.theme_colour a.orange{background-color:#9c451a;}
+.theme_colour a.magenta{background-color:#9b6ca6;}
+
