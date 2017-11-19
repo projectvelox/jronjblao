@@ -153,16 +153,7 @@
                             </tr>
                         </thead>
                         <tbody class="ci-contactfinding-tbody">
-                            <!--
-                            <tr>
-                                <td>
-                                    <input type="text" name="ci_contactfinding[0][person]" placeholder="Enter something" class="form-control input-md field_input" value="" style="margin-bottom: 5px;">
-                                </td>
-                                <td>
-                                    <input type="text" name="ci_contactfinding[0][finding]" placeholder="Enter something" class="form-control input-md field_input" value="" style="margin-bottom: 5px;">
-                                </td>
-                            </tr>
-                            -->
+                            <!--Add/Remove Items-->
                         </tbody>
                         <tfoot>
                             <tr>
@@ -211,16 +202,7 @@
                             </tr>
                         </thead>
                         <tbody class="ci-dependents-tbody">
-                            <!--
-                            <tr>
-                                <td>
-                                    <input type="text" name="ci_dependents[0][name]" placeholder="Name other than the applicant's children" class="form-control input-md field_input" value="" style="margin-bottom: 5px;">
-                                </td>
-                                <td>
-                                    <input type="text" name="ci_dependents[0][relation]" placeholder="Relation to the applicant" class="form-control input-md field_input" value="" style="margin-bottom: 5px;">
-                                </td>
-                            </tr>
-                            -->
+                            <!--Add/Remove Items-->
                         </tbody>
                         <tfoot>
                             <tr>
@@ -335,14 +317,7 @@
                             </tr>
                         </thead>
                         <tbody class="ci-residence-resource-tbody">
-                            <tr>
-                                <td>
-                                    <input type="text" name="ci_residence_resource[0][name]" placeholder="Enter something" class="form-control input-md field_input" value="" style="margin-bottom: 5px;">
-                                </td>
-                                <td>
-                                    <input type="text" name="ci_residence_resource[0][address]" placeholder="Enter something" class="form-control input-md field_input" value="" style="margin-bottom: 5px;">
-                                </td>
-                            </tr>
+                            <!--Add/Remove Items-->
                         </tbody>
                         <tfoot>
                             <tr>
@@ -393,14 +368,7 @@
                             </tr>
                         </thead>
                         <tbody class="ci-business-resource-tbody">
-                            <tr>
-                                <td>
-                                    <input type="text" name="ci_business_resource[0][name]" placeholder="Enter something" class="form-control input-md field_input" value="" style="margin-bottom: 5px;">
-                                </td>
-                                <td>
-                                    <input type="text" name="ci_business_resource[0][address]" placeholder="Enter something" class="form-control input-md field_input" value="" style="margin-bottom: 5px;">
-                                </td>
-                            </tr>
+                            <!--Add/Remove Items-->
                         </tbody>
                         <tfoot>
                             <tr>
@@ -442,14 +410,7 @@
                             </tr>
                         </thead>
                         <tbody class="ci-bank-resource-tbody">
-                            <tr>
-                                <td>
-                                    <input type="text" name="ci_bank_resource[0][name]" placeholder="Enter something" class="form-control input-md field_input" value="" style="margin-bottom: 5px;">
-                                </td>
-                                <td>
-                                    <input type="text" name="ci_bank_resource[0][address]" placeholder="Enter something" class="form-control input-md field_input" value="" style="margin-bottom: 5px;">
-                                </td>
-                            </tr>
+                            <!--Add/Remove Items-->
                         </tbody>
                         <tfoot>
                             <tr>
@@ -666,6 +627,8 @@
         $(addbtn).on("click", function(){ object.add(); });
         object.add();
     };
+
+    //add/remove input items
     var ci_contact_finding = new ItemizeObject(
         ".ci-contactfinding-tbody", 
         ".ci-contact-finding-add", 
@@ -703,93 +666,60 @@
                 '</tr>'
             );
         });
-
-
-
-
-    /*
-    //ci-dependents
-    $(".ci-dependents-remove").on("click", function() {
-      var tbody = $(".ci-dependents-tbody");
-      if($(tbody).children().length > 1) $(tbody).children().last().remove();
-    });
-    $(".ci-dependents-add").on("click", function() {
-        var tbody = $(".ci-dependents-tbody");
-        var index = $(tbody).children().length;
-        $(tbody).append(
-            '<tr>' +
+    var ci_residence_resource = new ItemizeObject(
+        ".ci-residence-resource-tbody", 
+        ".ci-residence-resource-add", 
+        ".ci-residence-resource-remove",
+        function(options){
+            var name = options.name || "";
+            var address = options.address || "";
+            return (
+                '<tr>' +
+                '    <td>' +
+                '        <input type="text" name="ci_residence_resource[' + options.index + '][name]" placeholder="Enter something" class="form-control input-md field_input" value="' + name + '" style="margin-bottom: 5px;">' +
+                '    </td>' +
+                '    <td>' +
+                '        <input type="text" name="ci_residence_resource[' + options.index + '][address]" placeholder="Enter something" class="form-control input-md field_input" value="' + address + '" style="margin-bottom: 5px;">' +
+                '    </td>' +
+                '</tr>'
+            );
+        });
+    var ci_business_resource = new ItemizeObject(
+        ".ci-business-resource-tbody", 
+        ".ci-business-resource-add", 
+        ".ci-business-resource-remove",
+        function(options){
+            var name = options.name || "";
+            var address = options.address || "";
+            return (
+                '<tr>' +
             '    <td>' +
-            '        <input type="text" name="ci_dependents[' + index + '][name]" placeholder="Name other than the applicant\'s children" class="form-control input-md field_input" value="" style="margin-bottom: 5px;">' +
+            '        <input type="text" name="ci_business_resource[' + options.index + '][name]" placeholder="Enter something" class="form-control input-md field_input" value="' + name + '" style="margin-bottom: 5px;">' +
             '    </td>' +
             '    <td>' +
-            '        <input type="text" name="ci_dependents[' + index + '][relation]" placeholder="Relation to the applicant" class="form-control input-md field_input" value="" style="margin-bottom: 5px;">' +
-            '    </td>' +
-            '</tr>'
-        );
-    });
-*/
-
-
-
-    //ci-residence-resource
-    $(".ci-residence-resource-remove").on("click", function() {
-      var tbody = $(".ci-residence-resource-tbody");
-      if($(tbody).children().length > 1) $(tbody).children().last().remove();
-    });
-    $(".ci-residence-resource-add").on("click", function() {
-        var tbody = $(".ci-residence-resource-tbody");
-        var index = $(tbody).children().length;
-        $(tbody).append(
-            '<tr>' +
-            '    <td>' +
-            '        <input type="text" name="ci_residence_resource[' + index + '][name]" placeholder="Enter something" class="form-control input-md field_input" value="" style="margin-bottom: 5px;">' +
-            '    </td>' +
-            '    <td>' +
-            '        <input type="text" name="ci_residence_resource[' + index + '][address]" placeholder="Enter something" class="form-control input-md field_input" value="" style="margin-bottom: 5px;">' +
+            '        <input type="text" name="ci_business_resource[' + options.index + '][address]" placeholder="Enter something" class="form-control input-md field_input" value="' + address + '" style="margin-bottom: 5px;">' +
             '    </td>' +
             '</tr>'
-        );
-    });
-
-    //ci-business-resource
-    $(".ci-business-resource-remove").on("click", function() {
-      var tbody = $(".ci-business-resource-tbody");
-      if($(tbody).children().length > 1) $(tbody).children().last().remove();
-    });
-    $(".ci-business-resource-add").on("click", function() {
-        var tbody = $(".ci-business-resource-tbody");
-        var index = $(tbody).children().length;
-        $(tbody).append(
-            '<tr>' +
-            '    <td>' +
-            '        <input type="text" name="ci_business_resource[' + index + '][name]" placeholder="Enter something" class="form-control input-md field_input" value="" style="margin-bottom: 5px;">' +
-            '    </td>' +
-            '    <td>' +
-            '        <input type="text" name="ci_business_resource[' + index + '][address]" placeholder="Enter something" class="form-control input-md field_input" value="" style="margin-bottom: 5px;">' +
-            '    </td>' +
-            '</tr>'
-        );
-    });
-
-    //ci-bank-resource
-    $(".ci-bank-resource-remove").on("click", function() {
-      var tbody = $(".ci-bank-resource-tbody");
-      if($(tbody).children().length > 1) $(tbody).children().last().remove();
-    });
-    $(".ci-bank-resource-add").on("click", function() {
-        var tbody = $(".ci-bank-resource-tbody");
-        var index = $(tbody).children().length;
-        $(tbody).append(
-            '<tr>' +
-            '    <td>' +
-            '        <input type="text" name="ci_bank_resource[' + index + '][name]" placeholder="Enter something" class="form-control input-md field_input" value="" style="margin-bottom: 5px;">' +
-            '    </td>' +
-            '    <td>' +
-            '        <input type="text" name="ci_bank_resource[' + index + '][address]" placeholder="Enter something" class="form-control input-md field_input" value="" style="margin-bottom: 5px;">' +
-            '    </td>' +
-            '</tr>'
-        );
-    });
+            );
+        });
+    var ci_business_resource = new ItemizeObject(
+        ".ci-bank-resource-tbody", 
+        ".ci-bank-resource-add", 
+        ".ci-bank-resource-remove",
+        function(options){
+            var name = options.name || "";
+            var address = options.address || "";
+            return (
+                '<tr>' +
+                '    <td>' +
+                '        <input type="text" name="ci_bank_resource[' + options.index + '][name]" placeholder="Enter something" class="form-control input-md field_input" value="' + name + '" style="margin-bottom: 5px;">' +
+                '    </td>' +
+                '    <td>' +
+                '        <input type="text" name="ci_bank_resource[' + options.index + '][address]" placeholder="Enter something" class="form-control input-md field_input" value="' + address + '" style="margin-bottom: 5px;">' +
+                '    </td>' +
+                '</tr>'
+            );
+        });
 
     //name="ci_col_visit"
     $('[name="ci_col_visit"]').on("change", function(){
